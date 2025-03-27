@@ -31,9 +31,9 @@ lib/
 │   ├── group_service.dart      # 그룹 관리 API 호출
 │   ├── ai_service.dart         # AI 추천 API 호출
 
--------------------------------------------------------------------------------
+-------------------여기 밑에부턴 아직 굳이 안읽어도 됨-------------------
 
-여기 밑에부턴 아직 굳이 안읽어도 됨.
+
 
 
 # 서버 실행 방법
@@ -50,4 +50,50 @@ node.js + express
 
 
 
+-------------------------------------------------------------------------------
 
+backend/
+├── server.js          # 서버 진입점
+├── routes/            # 라우트 파일
+│   ├── map.js         # 지도 관련 API
+│   ├── schedule.js    # 일정 관리 API
+│   ├── group.js       # 그룹 관리 API
+│   ├── ai.js          # AI 추천 API
+├── models/            # 데이터베이스 모델
+│   ├── User.js        # 사용자 모델
+│   ├── Schedule.js    # 일정 모델
+│   ├── Group.js       # 그룹 모델
+├── controllers/       # 비즈니스 로직
+│   ├── mapController.js
+│   ├── scheduleController.js
+│   ├── groupController.js
+│   ├── aiController.js
+├── config/            # 설정 파일
+│   ├── db.js          # MongoDB 연결 설정
+├── package.json       # 프로젝트 설정
+
+
+-------------------------------------------------------------------------------
+
+지도 기능 (routes/map.js):
+
+GET /map/nearby: 사용자의 현재 위치 기반 관광지 추천
+GET /map/search: 특정 여행지 검색
+일정 관리 (routes/schedule.js):
+
+POST /schedule: 일정 추가
+GET /schedule: 일정 조회
+PUT /schedule/:id: 일정 수정
+DELETE /schedule/:id: 일정 삭제
+그룹 관리 (routes/group.js):
+
+POST /group: 그룹 생성
+GET /group/:id: 그룹 정보 조회
+PUT /group/:id: 그룹 정보 수정
+POST /group/:id/invite: 그룹 멤버 초대
+AI 추천 (routes/ai.js):
+
+POST /ai/recommend: 사용자 데이터를 기반으로 일정 추천
+
+
+추후 AWS 배포 시, 백엔드와 데이터베이스를 클라우드 환경으로 이전
