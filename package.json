@@ -1,8 +1,8 @@
 {
-  "name": "travelmate",
+  "name": "travelmate-master",
   "version": "1.0.0",
-  "description": "TravelMate Backend Server. Support clients with optimized travel experience",
-  "main": "server.js",
+  "description": "A new Flutter project.",
+  "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -10,14 +10,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/VenyVince/TravelMate.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/VenyVince/TravelMate/issues"
-  },
-  "homepage": "https://github.com/VenyVince/TravelMate#readme"
+  "dependencies": {
+    "axios": "^1.8.4",
+    "express": "^5.1.0"
+  }
 }

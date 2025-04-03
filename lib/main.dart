@@ -1,21 +1,30 @@
 import 'package:flutter/material.dart';
-import 'compoenents/home/home.dart'; // home.dart 파일을 import 합니다.
+import 'package:provider/provider.dart';
+import 'screens/home_screen.dart';
+import 'models/app_state.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => AppState(),
+      child: const TravelPlannerApp(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class TravelPlannerApp extends StatelessWidget {
+  const TravelPlannerApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter 네비게이션 바 예제',
+      title: 'Travel Planner',
       theme: ThemeData(
-        primarySwatch: Colors.blue, // 앱의 기본 색상 테마
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        useMaterial3: true,
       ),
-      home: const HomePage(), // 앱이 시작될 때 보여줄 첫 화면으로 HomePage를 지정합니다.
+      home: const HomeScreen(),
     );
   }
 }
